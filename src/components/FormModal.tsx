@@ -1,15 +1,21 @@
+'use client';
 import { CgClose } from "react-icons/cg"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Input } from "./ui/input"
 import { Button } from "./ui/button"
 
-export const FormModal = () => {
+type Props = {
+  closeModal: () => void
+  modalRef: React.RefObject<HTMLDivElement | null>
+}
+
+export const FormModal = ({closeModal, modalRef}: Props) => {
     return (
-        <div className="bg-black/55 fixed inset-0 flex justify-center items-center">
-            <Card className="overflow-hidden border-card p-5 min-w-[350px] w-full">
+        <div className="bg-black/55 fixed inset-0 flex justify-center items-center z-30" ref={modalRef}>
+            <Card className="overflow-hidden border-card p-5 min-w-[350px] max-w-[550px] w-full">
                 <CardHeader className="flex justify-between items-center flex-row pt-0 px-0">
                     <CardTitle className="p-0">Cadastrar Novo Funcionário</CardTitle>
-                    <div><CgClose /></div>
+                    <div className="cursor-pointer border p-2" onClick={closeModal}><CgClose /></div>
                 </CardHeader>
                 <CardContent className="p-0">
                     <form action="">

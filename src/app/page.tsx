@@ -1,12 +1,14 @@
+'use client';
 import { LuUsers, LuClock, LuCalendar, LuAccessibility } from "react-icons/lu";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/bagdes";
 import { EmployeesTable } from "@/components/Employes";
 import { Fragment } from "react/jsx-runtime";
 import { FormModal } from "@/components/FormModal";
+import { useModal } from "@/hooks/modal";
 
 export default function Home() {
-
+  const { modalType, openModal, closeModal, modalRef } = useModal();
   const stats = [
     {
       title: "Funcionários Ativos",
@@ -43,8 +45,8 @@ export default function Home() {
             <Card key={stat.title} className="overflow-hidden border-card stat-card-shadow transition-all hover:stat-card-shadow-hover">
               <CardHeader className="flex justify-between flex-row items-center gap-2">
                 <div>
-                <CardDescription>{stat.title}</CardDescription>
-                <p className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--card-foreground)]">{stat.value}</p>
+                  <CardDescription>{stat.title}</CardDescription>
+                  <p className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--card-foreground)]">{stat.value}</p>
                 </div>
                 <div className="rounded-lg p-2 bg-[var(--bg-accent)]">
                   <Icon className="w-5 h-5 text-[var(--accent-foreground)]" />
@@ -57,7 +59,7 @@ export default function Home() {
           );
         })}
       </div>
-      <FormModal />
+    
       <EmployeesTable />
     </Fragment>
   );

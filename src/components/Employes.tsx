@@ -204,8 +204,6 @@ export const EmployeesTable = () => {
           </div>
         </CardContent>
       </Card>
-      const modal = useModal();
-
 
 
       {modal.modalType === "funcionario" && (

@@ -109,13 +109,17 @@ const employees = [
   },
 ];
 
-export const EmployeesTable = () => {
+type Props = {
+  header: boolean
+}
+
+export const EmployeesTable = ({header}: Props) => {
   const modal = useModal();
 
   return (
     <>
       <Card className="border-card p-4">
-        <CardHeader className="flex justify-between flex-row items-center pt-0 px-0">
+       {header && <CardHeader className="flex justify-between flex-row items-center pt-0 px-0">
           <CardTitle className="text-2xl">Funciários</CardTitle>
           <div>
             <Button onClick={() => { modal.openModal('funcionario') }}>
@@ -123,7 +127,7 @@ export const EmployeesTable = () => {
               Adicionar Funcionário
             </Button>
           </div>
-        </CardHeader>
+        </CardHeader>}
 
         <CardContent className="p-0 px-0">
           <div className="overflow-x-auto">

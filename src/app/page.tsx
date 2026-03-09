@@ -6,6 +6,7 @@ import { EmployeesTable } from "@/components/Employes";
 import { Fragment } from "react/jsx-runtime";
 import { FormModal } from "@/components/FormModal";
 import { useModal } from "@/hooks/modal";
+import { TitlePage } from "@/components/Title";
 
 export default function Home() {
   const { modalType, openModal, closeModal, modalRef } = useModal();
@@ -38,6 +39,7 @@ export default function Home() {
 
   return (
     <Fragment>
+      <TitlePage title="Dashboard" description="Visão geral do controle de ponto" />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
         {stats.map((stat) => {
           const Icon = stat.icon; // pega o componente do ícone
@@ -60,7 +62,7 @@ export default function Home() {
         })}
       </div>
     
-      <EmployeesTable />
+      <EmployeesTable header={true} />
     </Fragment>
   );
 }

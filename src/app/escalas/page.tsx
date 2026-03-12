@@ -5,7 +5,8 @@ import { TitlePage } from "@/components/Title";
 import { Badge } from "@/components/ui/bagdes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { FaCalendar, FaUsers } from "react-icons/fa";
+import { CiCalendar } from "react-icons/ci";
+import { FaUsers } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 
 const escalasGrid = [
@@ -107,21 +108,21 @@ export default function Escalas() {
                 {escalasGrid.map((stat, index) => (
                     <Card
                         key={index}
-                        className="overflow-hidden border-card stat-card-shadow transition-all hover:stat-card-shadow-hover"
+                        className="overflow-hidden border-card p-4 rounded-xl stat-card-shadow transition-all hover:stat-card-shadow-hover"
                     >
-                        <CardHeader className="flex justify-between  items-start gap-2">
+                        <CardHeader className="flex justify-between  items-start gap-2 p-0">
                             <div className="rounded-lg p-2 bg-[var(--bg-accent)]">
-                                <FaCalendar className="w-5 h-5 text-[var(--accent-foreground)]" />
+                                <CiCalendar className="w-5 h-5 text-[var(--accent-foreground)]" />
                             </div>
                             <div>
-                                <p className="mt-1.5 text-2xl font-bold tracking-tight text-[var(--card-foreground)]">
+                                <p className="text-xs font-bold tracking-tight text-[var(--card-foreground)]">
                                     {stat.nome}
                                 </p>
                             </div>
                             <CardDescription>{stat.horario}</CardDescription>
                         </CardHeader>
 
-                        <CardContent className="!flex !gap-1 items-center">
+                        <CardContent className="!flex !gap-1 items-center p-0">
                             <CardDescription><FaUsers /></CardDescription>
                             <CardDescription>{stat.funcionarios} funcionários</CardDescription>
                         </CardContent>

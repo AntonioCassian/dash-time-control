@@ -94,7 +94,7 @@ export const Sidebar = () => {
                             <Link
                                 key={item.title}
                                 href={item.href}
-                                className="flex items-center gap-2 p-2 rounded text-sidebar-accent-foreground hover:bg-[var(--muted)]"
+                                className="flex items-center gap-2 p-2 rounded text-sidebar-accent-foreground hover:bg-[var(--sidebar-accent)]"
                             >
                                 <Icon size={18} />
                                 {item.title}

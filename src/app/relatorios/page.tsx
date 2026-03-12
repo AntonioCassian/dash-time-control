@@ -54,7 +54,7 @@ export default function DashboardCards() {
                         <Card key={index} className="overflow-hidden border-card stat-card-shadow transition-all hover:stat-card-shadow-hover p-5">
                             <CardContent className="flex items-start gap-3 justify-between p-0">
 
-                                <div className="rounded-lg p-2 bg-[var(--bg-accent)] text-[var(--accent-foreground)] w-9 h-9 justify-center inline-flex items-center">
+                                <div className="rounded-lg p-2 bg-[var(--color-accent)] text-[var(--accent-foreground)] w-9 h-9 justify-center inline-flex items-center">
                                     {card.icon}
                                 </div>
 

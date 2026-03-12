@@ -73,6 +73,8 @@ body {
   --warning-foreground: hsl(0 0% 100%);
   --info: hsl(217 91% 60%);
   --info-foreground: hsl(0 0% 100%);
+
+  --chart-2: #000000;
 }
 
 body {
